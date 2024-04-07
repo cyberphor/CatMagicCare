@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // load the scene from the GameScene.sks
+        // load scene from GameScene.sks
         if let scene = GKScene(fileNamed: "GameScene") {
             
             // cast the top-level node within the scene as a GameScene object
@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
                 //sceneNode.graphs = scene.graphs
                 
                 // Set the scale mode to scale to fit the window
-                //sceneNode.scaleMode = .aspectFill
+                sceneNode.scaleMode = .aspectFill
                 
                 // Present the scene
                 if let view = self.view as! SKView? {
