@@ -26,12 +26,13 @@ class GameScene: SpriteKit.SKScene {
         self.name = "GameScene"
         
         // load background
+        background.size = self.size
         background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         background.zPosition = 0
         self.addChild(background)
         
         // load player
-        player.position = CGPoint(x: background.position.x/2, y: background.position.y/5)
+        player.position = CGPoint(x: self.size.width/2, y: self.size.height/5)
         player.zPosition = 2
         self.addChild(player)
     }
