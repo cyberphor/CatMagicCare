@@ -1,31 +1,25 @@
 //
-//  GameViewController.swift
-//  CatMagicCare
+//  CatMagicCare/GameViewController.swift
 //
-//  Created by Victor on 4/3/24.
-//
+//  The purpose of this file is to define the app's primary UI and present the app's game scenes.
+//  It's the bridge between SpriteKit and UIKit.
+// 
 
-// import the SpriteKit framework
 import SpriteKit
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // declare and init a constant called "scene" using
-        // an instance of our "GameScene" class
+        let ui = self.view as UIView
+        let view = SKView(frame: ui.bounds)
         let scene = GameScene(size: CGSize(width: 1170.0, height: 2352.0))
         scene.scaleMode = .aspectFill
-        
-        // declare and init a constant called "view" using
-        // an instance of the "SKView" class
-        let view = self.view as! SKView
-        view.ignoresSiblingOrder = true
         view.presentScene(scene)
+        ui.addSubview(view)
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
 }
